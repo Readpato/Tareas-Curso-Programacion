@@ -24,7 +24,7 @@ $botonCalcularPromedio.onclick = function() {
     }
 
     let promedioTotal = sumaTotalNumerosArray / $numerosArray.length;
-    $calculoPromedioArray.innerText = promedioTotal;
+    $calculoPromedioArray.innerText = `${promedioTotal}.`;
     return false
 }
 
@@ -39,11 +39,26 @@ $botonCalcularNumeroPequeno.onclick = function () {
         listaCompletaNumeros.push(Number($numerosArray[n].innerText));
     }   
 
-
     //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
-    console.log(listaCompletaNumeros);
-    $numeroPequenoArray.innerText = Math.min(...listaCompletaNumeros);
+
+    $numeroPequenoArray.innerText = `${Math.min(...listaCompletaNumeros)}.`;
     
     return false;
 }
+
+const $botonCalcularNumeroGrande = document.querySelector('#calcularNumeroGrande');
+
+$botonCalcularNumeroGrande.onclick = function () {
+    const $numerosArray = document.querySelectorAll('.numerosArray');
+    const $numeroGrandeArray = document.querySelector('#numeroGrandeArray');
+    const listaCompletaNumeros = [];
+
+    for ( j = 0 ; j < $numerosArray.length ; j++) {
+        listaCompletaNumeros.push(Number($numerosArray[j].innerText));
+    }
+    $numeroGrandeArray.innerText = `${Math.max(...listaCompletaNumeros)}.`;
+    return false;
+}
+
+
 
