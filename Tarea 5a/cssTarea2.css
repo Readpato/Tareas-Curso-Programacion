@@ -1,0 +1,22 @@
+h1 {
+    font-size: 5rem;
+    color: red;
+    text-align: center;
+
+}   
+
+body {
+    background-color: seagreen;
+}
+
+form {
+    margin-left: 230px;
+}
+
+#informacionCompilada {
+    color: black;
+}
+
+#fotito {
+    margin-left: 550px;
+}
