@@ -28,3 +28,22 @@ $botonCalcularPromedio.onclick = function() {
     return false
 }
 
+const $botonCalcularNumeroPequeno = document.querySelector('#calcularNumeroPequeno');
+
+$botonCalcularNumeroPequeno.onclick = function () { 
+    const $numerosArray = document.querySelectorAll('.numerosArray');
+    const $numeroPequenoArray = document.querySelector('#numeroPequenoArray')
+    const listaCompletaNumeros = [];
+   
+    for ( n = 0 ; n < $numerosArray.length ; n++) {
+        listaCompletaNumeros.push(Number($numerosArray[n].innerText));
+    }   
+
+
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+    console.log(listaCompletaNumeros);
+    $numeroPequenoArray.innerText = Math.min(...listaCompletaNumeros);
+    
+    return false;
+}
+
