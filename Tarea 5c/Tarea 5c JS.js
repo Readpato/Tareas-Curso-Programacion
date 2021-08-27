@@ -60,5 +60,21 @@ $botonCalcularNumeroGrande.onclick = function () {
     return false;
 }
 
+const $botonCalcularNumeroRepetido = document.querySelector('#calcularNumeroRepetido');
+
+$botonCalcularNumeroRepetido.onclick = function () {
+    const $numerosArray = document.querySelectorAll('.numerosArray');
+    const $numeroRepetidoArray = document.querySelector('#numeroRepetidoArray');
+    let NUMERO_REPETIDO;
 
 
+    for ( m = 0 ; m < $numerosArray.length ; m++ ) {
+        for ( k = 0 ; k < $numerosArray.length ; k++) {
+            if ($numerosArray[m] === $numerosArray[k]){
+                NUMERO_REPETIDO = Number($numerosArray[m].innerText)
+            }
+        }
+    }
+    console.log(`${NUMERO_REPETIDO}`);
+    return false;
+} 
