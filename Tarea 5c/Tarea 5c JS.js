@@ -73,7 +73,7 @@ $botonCalcularNumeroRepetido.onclick = function () {
     for ( m = 0 ; m < $numerosArray.length ; m++ ) {
         for ( k = m + 1 ; k < $numerosArray.length ; k++) {
             if (Number($numerosArray[m].innerText) === Number($numerosArray[k].innerText)){
-               FRECUENCIA_NUMERO++
+               FRECUENCIA_NUMERO++;
             }
 
             if (FRECUENCIA_NUMERO > MAXIMA_FRECUENCIA)
