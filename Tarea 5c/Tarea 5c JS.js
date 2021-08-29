@@ -66,15 +66,23 @@ $botonCalcularNumeroRepetido.onclick = function () {
     const $numerosArray = document.querySelectorAll('.numerosArray');
     const $numeroRepetidoArray = document.querySelector('#numeroRepetidoArray');
     let NUMERO_REPETIDO;
+    let FRECUENCIA_NUMERO = 0;
+    let MAXIMA_FRECUENCIA = 1;
 
 
     for ( m = 0 ; m < $numerosArray.length ; m++ ) {
-        for ( k = 0 ; k < $numerosArray.length ; k++) {
-            if ($numerosArray[m] === $numerosArray[k]){
-                NUMERO_REPETIDO = Number($numerosArray[m].innerText)
+        for ( k = m + 1 ; k < $numerosArray.length ; k++) {
+            if (Number($numerosArray[m].innerText) === Number($numerosArray[k].innerText)){
+               FRECUENCIA_NUMERO++
             }
+
+            if (FRECUENCIA_NUMERO > MAXIMA_FRECUENCIA)
+            MAXIMA_FRECUENCIA = FRECUENCIA_NUMERO;
+            NUMERO_REPETIDO = Number($numerosArray[m].innerText);
         }
+        FRECUENCIA_NUMERO = 0;
     }
-    console.log(`${NUMERO_REPETIDO}`);
+
+    $numeroRepetidoArray.innerText = `${NUMERO_REPETIDO}.`;
     return false;
 } 
